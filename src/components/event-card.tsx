@@ -2,11 +2,11 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { EventoEvent } from "@prisma/client";
+import { events } from "@prisma/client";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type EventCardProps = {
-  event: EventoEvent;
+  event: events;
 };
 const MotionLink = motion(Link);
 
@@ -39,7 +39,7 @@ export default function EventCard({ event }: EventCardProps) {
         key={event.id}
       >
         <Image
-          src={event.imageUrl}
+          src={event.image_url}
           alt={event.name}
           width={500}
           height={280}
@@ -47,7 +47,7 @@ export default function EventCard({ event }: EventCardProps) {
         />
         <div className="flex flex-col flex-1 justify-center items-center">
           <h2 className="text-2xl font-semibold">{event.name}</h2>
-          <p className="italic text-white/75">By {event.organizerName}</p>
+          <p className="italic text-white/75">By {event.organizer_name}</p>
           <p className="text-sm text-white/50 mt-4">{event.location}</p>
         </div>
         <section className="absolute flex flex-col justify-center items-center left-[12px] top-[12px] h-[45px] w-[45px] bg-black/30 rounded-md">

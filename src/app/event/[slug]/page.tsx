@@ -20,14 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EventPage({ params }: Props) {
   const slug = params.slug;
-
   const event = await getEvent(slug);
 
   return (
     <main>
-      <section className="flex justify-center items-center py-14 md:py-20 relative overflow-hidden">
+      <section className="relative overflow-hidden flex justify-center items-center py-14 md:py-20">
         <Image
-          src={event.imageUrl}
+          src={event.image_url}
           className="object-cover z-0 blur-3xl"
           alt="Event background image"
           fill
@@ -37,11 +36,11 @@ export default async function EventPage({ params }: Props) {
         />
         <div className="flex flex-col z-1 gap-6 lg:gap-16 lg:flex-row relative">
           <Image
-            src={event.imageUrl}
+            src={event.image_url}
             alt={event.name}
             width={300}
             height={201}
-            className="rounded-xl border-2 border-white/50 object-cover"
+            className="max-h-52 rounded-xl border-2 border-white/50 object-cover"
           />
           <div className="flex flex-col ">
             <p className="text-white/75">
@@ -54,8 +53,9 @@ export default async function EventPage({ params }: Props) {
             <H1 className="mb-2 mt-1 whitespace-nowrap lg:text-5xl">
               {event.name}
             </H1>
-            <p>
-              Organized by <span className="italic">{event.organizerName}</span>
+            <p className="whitespace-nowrap text-xl text-white/75">
+              Organized by{" "}
+              <span className="italic">{event.organizer_name}</span>
             </p>
             <button className="bg-white/20 text-lg bg-blur capitalize mt-5 lg:mt-auto w-[95vw] rounded-md border-white/10 border-2 sm:w-full py-2 state-effects">
               Get tickets

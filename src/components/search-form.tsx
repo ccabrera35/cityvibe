@@ -23,10 +23,11 @@ export default function SearchForm() {
       <input
         onChange={handleChange}
         value={searchText}
-        className="w-full h-16 rounded-lg bg-white/[7%]px-6 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/10"
+        className="w-full h-16 rounded-lg bg-white/[7%] px-6 outline-none ring-accent/50 transition focus:ring-2 focus:bg-white/10"
         placeholder="Search events in any city"
         spellCheck={false}
       />
     </form>
   );
 }
+
