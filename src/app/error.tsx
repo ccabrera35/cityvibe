@@ -1,4 +1,5 @@
 "use client"; // Error components must be Client Components
+
 import { useEffect } from "react";
 import H1 from "../components/h1";
 

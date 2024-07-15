@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { unstable_cache } from "next/cache";
 
 export const getEvents = unstable_cache(async (city: string, page = 1) => {
-  console.log('city inside unstable', capitalize(city));
   const events = await prisma.events.findMany({
     skip: (page - 1) * 6, 
     take: 6,
@@ -16,8 +15,6 @@ export const getEvents = unstable_cache(async (city: string, page = 1) => {
       date: "asc"
     }
   });
-
-  console.log('events', events);
 
   let totalCount;
   if (city === "all") {
