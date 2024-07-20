@@ -7,7 +7,8 @@ const nextConfig = {
         hostname: "images.unsplash.com"
       }
     ]
-  }
+  },
+  assetPrefix: "https://cityvibe.vercel.app"
 };
 
 module.exports = nextConfig;
