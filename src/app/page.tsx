@@ -17,11 +17,11 @@ export default function Home() {
       <section className="mt-4 flex gap-x-2 text-sm text-white/50">
         <p>Popular:</p>
         <div className="space-x-2 font-semibold">
-          <Link href="/events/houston">Houston</Link>
-          <Link href="/events/tokyo">Tokyo</Link>
-          <Link href="/events/sydney">Sydney</Link>
-          <Link href="/events/new%20york">New York</Link>
-          <Link href="/events/rio%20de%20janeiro">Rio de Janeiro</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH}/events/houston`}>Houston</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH}/events/tokyo`}>Tokyo</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH}/events/sydney`}>Sydney</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH}/events/new%20york`}>New York</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH}/events/rio%20de%20janeiro`}>Rio de Janeiro</Link>
         </div>
       </section>
     </main>
