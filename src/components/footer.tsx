@@ -1,11 +1,8 @@
 import Link from "next/link";
 
 const routes = [
-  { path: "terms-conditions", name: "Terms & Conditions" },
-  {
-    path: "privacy-policy",
-    name: "Privacy Policy"
-  }
+  { path: `${process.env.NEXT_PUBLIC_BASE_PATH}/terms-conditions`, name: "Terms & Conditions" },
+  { path: `${process.env.NEXT_PUBLIC_BASE_PATH}/privacy-policy`, name: "Privacy Policy" }
 ];
 
 export default function Footer() {

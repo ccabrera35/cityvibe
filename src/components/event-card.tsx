@@ -24,7 +24,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <MotionLink
       className="flex-1 basis-80 h-[380px] max-w-[500px]"
-      href={`/event/${event.slug}`}
+      href={`${process.env.NEXT_PUBLIC_BASE_PATH}/event/${event.slug}`}
       ref={ref}
       style={{
         // @ts-ignore

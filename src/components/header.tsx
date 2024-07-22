@@ -6,11 +6,13 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const routes = [
-  { name: "Home", path: "/" },
+  { name: "Home", path: isProd ? "/cityvibe" : "/" },
   {
     name: "All Events",
-    path: "/events/all"
+    path: `${process.env.NEXT_PUBLIC_BASE_PATH}/events/all`
   }
 ];
 

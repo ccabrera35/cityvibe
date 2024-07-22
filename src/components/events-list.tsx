@@ -11,9 +11,9 @@ type EventsListProps = {
 export default async function EventsList({ city, page = 1 }: EventsListProps) {
   const { events, totalCount } = await getEvents(city, page);
 
-  const previousPath = page > 1 ? `/events/${city}?page=${page - 1}` : "";
+  const previousPath = page > 1 ? `${process.env.NEXT_PUBLIC_BASE_PATH}/events/${city}?page=${page - 1}` : "";
   const nextPath =
-    totalCount > 6 * page ? `/events/${city}?page=${page + 1}` : "";
+    totalCount > 6 * page ? `${process.env.NEXT_PUBLIC_BASE_PATH}/events/${city}?page=${page + 1}` : "";
 
   if (events.length === 0) {
     return (
