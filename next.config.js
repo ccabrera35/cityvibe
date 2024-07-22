@@ -14,6 +14,14 @@ const nextConfig = {
         hostname: "images.unsplash.com"
       }
     ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/cityvibe/:slug*",
+        destination: "/:slug*",
+      },
+    ];
   }
 };
 
